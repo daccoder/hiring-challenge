@@ -9,6 +9,9 @@ return Application::configure(basePath: dirname(__DIR__))
         api: __DIR__.'/../routes/api.php',
         health: '/up',
     )
+    ->withCommands([
+        \App\Modules\ContactFinder\Console\FindContactsCommand::class,
+    ])
     ->withMiddleware(function (Middleware $middleware) {
         //
     })
